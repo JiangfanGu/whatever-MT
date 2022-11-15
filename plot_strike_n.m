@@ -12,8 +12,7 @@ function plot_strike
 pref_strike = 170*pi/180;
 azimuth = 0;  nsect=72;  %nsect controls the rose thickness
 esper=100;
-[cname,cdir]=uigetfile({'*.dcmp'},'Choose files',...
-    'multiselect','on');
+[cname,cdir]=uigetfile({'*.dcmp'},'Choose files','multiselect','on');
 if ~iscell(cname)% is not a cell array
     if cname==0 %select none,
         return;
