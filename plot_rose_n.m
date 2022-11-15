@@ -1,11 +1,11 @@
 %batch plot rose
 %%code for special need to plot some rose strike
 %define parameters
+%%modified by GuJiangfan@CUGB
 pref_strike = 90*pi/180;
 azimuth = 0;  nsect=72;  %nsect controls the rose thickness
 esper=100;
-[cname,cdir]=uigetfile({'*.dcmp'},'Choose files',...
-    'multiselect','on');
+[cname,cdir]=uigetfile({'*.dcmp'},'Choose files','multiselect','on');
 if ~iscell(cname)% is not a cell array
     if cname==0 %select none,
         return;
@@ -81,12 +81,12 @@ pclims=[0,90];
 pylabel='degrees';
 cmap=jet(32);
 %%%%%%%%%%%rose
-%%%ipers????????????
-%%parameter ???????????????????????????
+%%%read ipers first and change your parameter everytime
+%%parameter is the first location of every period, and do not forget to input the last 
 parameter=[1 14 27 41 54 67 79 92];%%change
 band=length(parameter)-1;
 name={'0.001-0.01','0.01-0.1','0.1-1','1-10','10-100','100-1000','1000-10000'};%change
-%%%%%%%???????
+%%%%%%%you can chose the data you want to draw with
 isites=[1:92];
 for i=1:1:band
     parplot_n=parplot(:,parameter(i):parameter(i+1)-1);
