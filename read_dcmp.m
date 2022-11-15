@@ -1,3 +1,4 @@
+%use with plot_rose_n.m
 function data=read_dcmp(cdir,cname,ns)
 for i=1:ns
     data(i).dcmpname=cname(i);
